@@ -62,4 +62,5 @@ RUN buildDeps=' \
 COPY httpd-foreground /usr/local/bin/
 USER 1001
 EXPOSE 80
-CMD ["httpd-foreground"]
+ADD httpd-foreground /
+CMD ["/httpd-foreground"]
