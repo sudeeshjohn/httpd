@@ -1,4 +1,4 @@
-FROM ppc64le/ubuntu:latest
+FROM ppc64le/ubuntu
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 #RUN groupadd -r www-data && useradd -r --create-home -g www-data www-data
@@ -63,4 +63,4 @@ COPY httpd-foreground /usr/local/bin/
 USER 1001
 EXPOSE 80
 ADD httpd-foreground /
-CMD ["/httpd-foreground"]
+ENTRYPOINT ["/httpd-foreground"]
